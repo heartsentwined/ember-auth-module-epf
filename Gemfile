@@ -13,4 +13,9 @@ gem 'handlebars-source',             '~> 1.0'
 gem 'epf-source',                    '~> 0.1'
 gem 'ember-auth-source',             '~> 9.0'
 
+gem 'ember-auth-request-dummy',      '~> 1.0'
+gem 'ember-auth-response-dummy',     '~> 1.0'
+gem 'ember-auth-strategy-dummy',     '~> 1.0'
+gem 'ember-auth-session-dummy',      '~> 1.0'
+
 gem 'appraisal',                     '~> 0.5'
