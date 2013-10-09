@@ -28,11 +28,3 @@ class Em.Auth.EpfAuthModule
     Ep.RestAdapter.reopen
       ajax: (url, type, settings) ->
         super url, type, self.auth._strategy.serialize(settings || {})
-
-Em.onLoad 'Ember.Application', (application) ->
-  application.initializer
-    name: 'ember-auth.epf'
-    before: 'ember-auth-load'
-
-    initialize: (container, app) ->
-      app.inject 'authModule:epf', 'session', 'session:main'
