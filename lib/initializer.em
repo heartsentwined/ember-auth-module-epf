@@ -4,6 +4,7 @@ Em.onLoad 'Ember.Application', (application) ->
     before: 'ember-auth-load'
 
     initialize: (container, app) ->
-      app.register 'authModule:epf', Em.Auth.EpfAuthModule
+      app.register 'authModule:epf', Em.Auth.EpfAuthModule, \
+      { singleton: true }
       app.inject 'authModule:epf', 'auth', 'auth:main'
       app.inject 'authModule:epf', 'session', 'session:main'
