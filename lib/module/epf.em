@@ -6,9 +6,9 @@ class Em.Auth.EpfAuthModule
     @auth.reopen
       user: Em.computed.alias 'module.epf.user'
 
-    @auth.addHandler 'signInSuccess',  @findUser
-    @auth.addHandler 'signInError',    @clearUser
-    @auth.addHandler 'signOutSuccess', @clearUser
+    @auth.addHandler 'signInSuccess',  @findUser.bind(@)
+    @auth.addHandler 'signInError',    @clearUser.bind(@)
+    @auth.addHandler 'signOutSuccess', @clearUser.bind(@)
 
   # @property [Ep.Model|null] current signed in user, if signed in and
   #   enabled auto-find user; otherwise null
