@@ -19,7 +19,7 @@ describe 'Em.Auth.EpfAuthModule', ->
     afterEach ->
       Em.run ->
         auth.userId = null
-        auth.epf.userModel = null
+        epf.config.userModel = null
 
     describe 'userId not set', ->
       beforeEach -> Em.run -> auth.userId = null
@@ -29,7 +29,7 @@ describe 'Em.Auth.EpfAuthModule', ->
         expect(spy).not.toHaveBeenCalled()
 
     describe 'userModel not set', ->
-      beforeEach -> Em.run -> auth.epf.userModel = null
+      beforeEach -> Em.run -> epf.config.userModel = null
 
       it 'does nothing', ->
         Em.run -> epf.findUser()
@@ -39,7 +39,7 @@ describe 'Em.Auth.EpfAuthModule', ->
       beforeEach -> Em.run -> auth.userId = 1
 
       describe 'userModel set', ->
-        beforeEach -> Em.run -> auth.epf.userModel = 'foo'
+        beforeEach -> Em.run -> epf.config.userModel = 'foo'
 
         it 'delegates to session#load', ->
           Em.run -> epf.findUser()
