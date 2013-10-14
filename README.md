@@ -25,3 +25,8 @@ App.Auth = Em.Auth.extend
 ```coffeescript
 @auth.get 'user' # access the auto-loaded user model
 ```
+
+License
+=======
+
+MIT
